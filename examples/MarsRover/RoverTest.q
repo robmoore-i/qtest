@@ -12,3 +12,5 @@
     rover:.rover.new[0;1;`S];
     rover:.rover.move[rover];
     .assert.equal[0;rover`y]}]
+
+exit .qtest.report[]
