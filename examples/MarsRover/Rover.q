@@ -14,7 +14,12 @@ pickup:{[rover;itemDescription]
     rover[`collector],:enlist itemDescription;
     rover}
 
-savePositionToFile:{[rover;testFileHandle]
-    h:hopen testFileHandle;
+savePositionToFile:{[rover;fileHandle]
+    h:hopen fileHandle;
     (neg h) raze (string rover`x)," ",(string rover`y)," ",(string rover`d);
     hclose h;}
+
+fromFile:{[fileHandle]
+    text:read0 fileHandle;
+    list:" "vs first text;
+    `x`y`d!("J"$list[0];"J"$list[1];`$list[2])}

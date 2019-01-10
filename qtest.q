@@ -30,3 +30,13 @@ testWithCleanup:{[description;testfunc;cleanupfunc]
     $[result;
         passes::passes,enlist description;
         failures::failures,enlist description];}
+
+testWithSetupAndCleanup:{[description;setupfunc;testfunc;cleanupfunc]
+    -1 "- ",description;
+    setupfunc[];
+    result:testfunc[];
+    $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
+    cleanupfunc[];
+    $[result;
+        passes::passes,enlist description;
+        failures::failures,enlist description];}

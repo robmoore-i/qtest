@@ -2,19 +2,19 @@
 
 \l ../../termcolour.q
 
+indentedString:{"\n\t\t",ssr[.Q.s x;"\n";"\n\t\t"]}
+
 equal:{[expected;actual]
     if[expected~actual; :1b];
-    .termcolour.red "\tExpected:   ",raze string expected;
+    .termcolour.red "\tExpected:   ",indentedString expected;
     .termcolour.red "\tWith count: ",string count expected;
-    .termcolour.red "\tActual:     ",raze raze string actual;
+    .termcolour.red "\tActual:     ",indentedString actual;
     .termcolour.red "\tWith count: ",string count actual;
     0b}
-
-collectionIndentedString:{[collection]"\n\t\t",ssr[.Q.s collection;"\n";"\n\t\t"]}
 
 .assert.in:{[member;collection]
     if[member in collection; :1b];
     .termcolour.red "\tExpected member: ",.Q.s member;
-    .termcolour.red "\tIn collection:   ",(collectionIndentedString collection);
+    .termcolour.red "\tIn collection:   ",(indentedString collection);
     .termcolour.red "\tWith count:      ",string count collection;
     0b}

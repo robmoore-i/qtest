@@ -29,4 +29,16 @@
         hdel `:TestRoverPosition.txt;
     }]
 
+.qtest.testWithSetupAndCleanup["The Rover can be created from a file";
+    {
+        h:hopen `:TestRoverPosition.txt;
+        (neg h) "3 4 E";
+        hclose h;
+    };{
+    rover:.rover.fromFile[`:TestRoverPosition.txt];
+    .assert.equal[`x`y`d!(3;4;`E);rover]};
+    {
+        hdel `:TestRoverPosition.txt;
+    }]
+
 exit .qtest.report[]
