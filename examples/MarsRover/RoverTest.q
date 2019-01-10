@@ -19,4 +19,14 @@
     rover:.rover.pickup[rover;moonRock];
     .assert.in[moonRock;rover`collector]}]
 
+.qtest.testWithCleanup["The Rover can save its position to a file";{
+    rover:.rover.new[3;4;`E];
+    testFileHandle:`:TestRoverPosition.txt;
+    .rover.savePositionToFile[rover;testFileHandle];
+    fileContent:read0 testFileHandle;
+    .assert.equal["3 4 E";first fileContent]};
+    {
+        hdel `:TestRoverPosition.txt;
+    }]
+
 exit .qtest.report[]

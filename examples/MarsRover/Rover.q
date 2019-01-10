@@ -13,3 +13,8 @@ pickup:{[rover;itemDescription]
     if[not `collector in key rover;rover[`collector]:enlist "Just the aliens";];
     rover[`collector],:enlist itemDescription;
     rover}
+
+savePositionToFile:{[rover;testFileHandle]
+    h:hopen testFileHandle;
+    (neg h) raze (string rover`x)," ",(string rover`y)," ",(string rover`d);
+    hclose h;}

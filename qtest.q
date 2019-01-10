@@ -21,3 +21,12 @@ report:{
     .termcolour.red "\n",(string nFails)," tests failed";
     .termcolour.green (string count .qtest.passes), " tests passed";
     1}
+
+testWithCleanup:{[description;testfunc;cleanupfunc]
+    -1 "- ",description;
+    result:testfunc[];
+    $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
+    cleanupfunc[];
+    $[result;
+        passes::passes,enlist description;
+        failures::failures,enlist description];}
