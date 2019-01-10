@@ -1,6 +1,8 @@
 \d .qtest
 
+\l ../../termcolour.q
+
 test:{[description;testfunc]
-    if[testfunc[]; :1b];
-    -1 description;
-    -1 "\tTest failed";}
+    result:testfunc[];
+    colourprint:$[result;.termcolour.green;.termcolour.red];
+    colourprint description,$[result;"";": Failed!"];}
