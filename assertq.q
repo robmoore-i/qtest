@@ -1,5 +1,3 @@
 \d .assert
 
-equal:{[expected;actual]
-    if[expected~actual; :1b];
-    0b}
+equal:{[expected;actual]expected~actual}
