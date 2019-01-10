@@ -1,5 +1,5 @@
 \d .qtest
 
 test:{[description;testfunc]
-    -1 "Running test:",description;
+    -1 "Running test: ",description;
     testfunc[];}

@@ -1,4 +1,4 @@
 \d .rover
 
-new:{[startX;startY;startDirection]}
-move:{}
+new:{[startX;startY;startDirection]`x`y`d!(startX;startY;startDirection)}
+move:{[rover]rover}
