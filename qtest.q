@@ -15,7 +15,7 @@ test:{[description;testfunc]
 
 report:{
     nFails:count .qtest.failures;
-    if[0~nFails;.termcolour.green (string count .qtest.passes), " tests passed."; :0];
+    if[0~nFails;.termcolour.green "\n",(string count .qtest.passes), " tests passed"; :0];
     -1 "\nFailed tests:";
     .termcolour.red each "- ",/:.qtest.failures;
     .termcolour.red "\n",(string nFails)," tests failed";
