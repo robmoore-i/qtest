@@ -5,11 +5,15 @@
 .qtest.failures::()
 .qtest.passes::()
 
+getTestResult:{[testfunc]
+    err:@[testfunc;`;{x}];
+    result:not 10h~type err;
+    $[result;.termcolour.green "\tPass";.termcolour.red "\n\tFailed with signal: ",err];
+    result}
+
 test:{[description;testfunc]
     -1 "- ",description;
-    err:@[testfunc;`;{x}];
-    result:or[()~err;null err];
-    $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
+    result:getTestResult[testfunc];
     $[result;
         passes::passes,enlist description;
         failures::failures,enlist description];}
@@ -25,9 +29,7 @@ report:{
 
 testWithCleanup:{[description;testfunc;cleanupfunc]
     -1 "- ",description;
-    err:@[testfunc;`;{x}];
-    result:or[()~err;null err];
-    $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
+    result:getTestResult[testfunc];
     cleanupfunc[];
     $[result;
         passes::passes,enlist description;
@@ -36,9 +38,7 @@ testWithCleanup:{[description;testfunc;cleanupfunc]
 testWithSetupAndCleanup:{[description;setupfunc;testfunc;cleanupfunc]
     -1 "- ",description;
     setupfunc[];
-    err:`$@[testfunc;`;{x}];
-    result:or[()~err;null err];
-    $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
+    result:getTestResult[testfunc];
     cleanupfunc[];
     $[result;
         passes::passes,enlist description;
