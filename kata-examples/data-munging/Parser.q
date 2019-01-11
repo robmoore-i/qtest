@@ -1,4 +1,10 @@
 \d .parser
 
+maxTemp:{[rows;dayNum]"J"$5 3 sublist rows[dayNum]}
+
+parseRow:{[maxTempProjection;dayNum]
+    `MxT`Dy!(maxTempProjection dayNum;dayNum)}
+
 .parser.parse:{[rows]
-    {`MxT`Dy!(88;1+x)} each 0 1}
+    maxTempProjection:maxTemp[rows;];
+    parseRow[maxTempProjection;] each 1 2}
