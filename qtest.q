@@ -7,8 +7,8 @@
 
 test:{[description;testfunc]
     -1 "- ",description;
-    result:testfunc[];
-    if[or[result~();null result];-1 "\n  Warning!\n  This test does not return a boolean value, it should!\n  It has set to fail to warn you.\n  You've probably just got an extra semicolon on the last line.\n"; result:0b];
+    err:@[testfunc;`;{x}];
+    result:or[()~err;null err];
     $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
     $[result;
         passes::passes,enlist description;
@@ -21,11 +21,12 @@ report:{
     .termcolour.red each "- ",/:.qtest.failures;
     .termcolour.red "\n",(string nFails)," tests failed";
     .termcolour.green (string count .qtest.passes), " tests passed";
-    1}
+    nFails}
 
 testWithCleanup:{[description;testfunc;cleanupfunc]
     -1 "- ",description;
-    result:testfunc[];
+    err:@[testfunc;`;{x}];
+    result:or[()~err;null err];
     $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
     cleanupfunc[];
     $[result;
@@ -35,7 +36,8 @@ testWithCleanup:{[description;testfunc;cleanupfunc]
 testWithSetupAndCleanup:{[description;setupfunc;testfunc;cleanupfunc]
     -1 "- ",description;
     setupfunc[];
-    result:testfunc[];
+    err:`$@[testfunc;`;{x}];
+    result:or[()~err;null err];
     $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
     cleanupfunc[];
     $[result;

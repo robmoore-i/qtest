@@ -8,9 +8,7 @@
     trader:.fruitTrader.new[];
     market:.market.new[`orange`apples!1 2;`oranges`apples!15 10];
     .fruitTrader.buy[trader;market;`orange];
-    .assert.both[
-        .assert.equal[0;.market.quantity[market;`oranges]];
-        .assert.equal[1;.fruitTrader.inventory[trader;`oranges]]
-    ]}]
+    .assert.equal[0;.market.quantity[market;`oranges]];
+    .assert.equal[1;.fruitTrader.inventory[trader;`oranges]];}]
 
 exit .qtest.report[]
