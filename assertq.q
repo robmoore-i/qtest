@@ -34,3 +34,5 @@ notEqual:{[expected;actual]
     .termcolour.red "\tExpected member:         ",.Q.s member;
     .termcolour.red "\tNot to be in collection: ",(indentedString collection);
     0b}
+
+.assert.both:and
