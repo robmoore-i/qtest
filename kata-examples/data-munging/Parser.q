@@ -10,4 +10,4 @@ parseRow:{[maxTempProjection;minTempProjection;dayNum]
 .parser.parse:{[rows]
     maxTempProjection:maxTemp[rows;];
     minTempProjection:minTemp[rows;];
-    parseRow[maxTempProjection;minTempProjection;] each 1 2}
+    parseRow[maxTempProjection;minTempProjection;] each 1+til 30}
