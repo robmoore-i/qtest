@@ -3,6 +3,4 @@
 
 \d .weather
 
-minTempSpreadDay:{[rows]
-    parsedRows:.parser.parse rows;
-    .analyser.minTempSpreadDay parsedRows}
+minTempSpreadDay:{[rows].analyser.minTempSpreadDay .parser.parse rows}
