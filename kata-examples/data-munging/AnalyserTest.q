@@ -12,3 +12,5 @@
     parsedRows:flip `Dy`MxT`MnT!(1 2 3;10 10 10;20 40 30);
 
     .assert.equal[2;.analyser.minTempSpreadDay parsedRows];}]
+
+exit .qtest.report[]
