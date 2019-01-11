@@ -35,7 +35,7 @@ a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover).
 .qtest.test["The Rover can move north";{
     rover:.rover.new[0;0;`N];
     rover:.rover.move[rover];
-    .assert.equal[1;rover`y]}]
+    .assert.equal[1;rover`y];}]
 ```
 
 ### Write a similarly simple test with a different assertion
@@ -45,7 +45,7 @@ a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover).
     rover:.rover.new[0;1;`S];
     moonRock:"A shiny moon rock";
     rover:.rover.pickup[rover;moonRock];
-    .assert.in[moonRock;rover`collector]}]
+    .assert.in[moonRock;rover`collector];}]
 ```
 
 ### Write a test with some cleanup afterwards
@@ -56,7 +56,7 @@ a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover).
     testFileHandle:`:TestRoverPosition.txt;
     .rover.savePositionToFile[rover;testFileHandle];
     fileContent:read0 testFileHandle;
-    .assert.equal["3 4 E";first fileContent]};
+    .assert.equal["3 4 E";first fileContent];};
     {
         hdel `:TestRoverPosition.txt;
     }]
@@ -72,7 +72,7 @@ a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover).
         hclose h;
     };{
     rover:.rover.fromFile[`:TestRoverPosition.txt];
-    .assert.equal[`x`y`d!(3;4;`E);rover]};
+    .assert.equal[`x`y`d!(3;4;`E);rover];};
     {
         hdel `:TestRoverPosition.txt;
     }]
@@ -132,13 +132,13 @@ m32/ 12()core 32768MB romo rob.local w.x.y.z NONEXPIRE
 		x| 3
 		y| 4
 		d| `E
-		
+
 	With count: 3
 	Actual:     
 		x| 0
 		y| 0
 		d| `N
-		
+
 	With count: 3
 	Fail
 
@@ -147,14 +147,11 @@ Failed tests:
 
 1 tests failed
 4 tests passed
-Rob:MarsRover romo$ 
+Rob:MarsRover romo$
 ```
 
 ## Inadequacies
 
-- Only really supports one assertion per test at the moment, although this *is* what you should aim for in your tests ;)
-
 - Not many types of assertions, but you can add your own fairly easily.
 
 - Assertions are not deeply tested, but you can correct the implementation if it proves inadequate.
-
