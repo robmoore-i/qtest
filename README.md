@@ -83,3 +83,78 @@ a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover).
 ```
 exit .qtest.report[]
 ```
+
+## Test output
+
+Green and red coloured output as appropriate.
+
+### Passing tests
+
+```
+Rob:MarsRover romo$ q RoverTest.q
+KDB+ 3.6 2018.10.23 Copyright (C) 1993-2018 Kx Systems
+m32/ 12()core 32768MB romo rob.local w.x.y.z NONEXPIRE
+
+- The Rover can move north
+	Pass
+- The Rover can move south
+	Pass
+- The Rover can pick up a moon rock
+	Pass
+- The Rover can save its position to a file
+	Pass
+- The Rover can be created from a file
+	Pass
+
+5 tests passed
+Rob:MarsRover romo$
+```
+
+### Failing tests
+
+```
+Rob:MarsRover romo$ q RoverTest.q
+KDB+ 3.6 2018.10.23 Copyright (C) 1993-2018 Kx Systems
+m32/ 12()core 32768MB romo rob.local w.x.y.z NONEXPIRE
+
+- The Rover can move north
+	Pass
+- The Rover can move south
+	Pass
+- The Rover can pick up a moon rock
+	Pass
+- The Rover can save its position to a file
+	Pass
+- The Rover can be created from a file
+
+  Assertion failed: .assert.equal
+	Expected:   
+		x| 3
+		y| 4
+		d| `E
+		
+	With count: 3
+	Actual:     
+		x| 0
+		y| 0
+		d| `N
+		
+	With count: 3
+	Fail
+
+Failed tests:
+- The Rover can be created from a file
+
+1 tests failed
+4 tests passed
+Rob:MarsRover romo$ 
+```
+
+## Inadequacies
+
+- Only really supports one assertion per test at the moment, although this *is* what you should aim for in your tests ;)
+
+- Not many types of assertions, but you can add your own fairly easily.
+
+- Assertions are not deeply tested, but you can correct the implementation if it proves inadequate.
+

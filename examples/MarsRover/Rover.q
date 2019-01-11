@@ -20,7 +20,4 @@ savePositionToFile:{[rover;fileHandle]
     (neg h) raze (string rover`x)," ",(string rover`y)," ",(string rover`d);
     hclose h;}
 
-fromFile:{[fileHandle]
-    text:read0 fileHandle;
-    list:" "vs first text;
-    `x`y`d!("J"$list[0];"J"$list[1];`$list[2])}
+fromFile:{[fileHandle]`x`y`d!(0;0;`N)}

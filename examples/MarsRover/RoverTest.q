@@ -35,6 +35,7 @@
         (neg h) "3 4 E";
         hclose h;
     };{
+    -1 "\n  (This test is supposed to fail)";
     rover:.rover.fromFile[`:TestRoverPosition.txt];
     .assert.equal[`x`y`d!(3;4;`E);rover]};
     {
