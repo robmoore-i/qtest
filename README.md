@@ -150,6 +150,12 @@ Failed tests:
 Rob:MarsRover romo$
 ```
 
+### Run a test
+
+```
+Rob:MarsRover romo$ q RoverTest.q
+```
+
 ## Inadequacies
 
 - Not many types of assertions, but you can add your own fairly easily.
