@@ -6,6 +6,7 @@ indentedString:{"\n\t\t",ssr[.Q.s x;"\n";"\n\t\t"]}
 
 equal:{[expected;actual]
     if[expected~actual; :1b];
+    .termcolour.red "\tAssertion failed: .assert.equal";
     .termcolour.red "\tExpected:   ",indentedString expected;
     .termcolour.red "\tWith count: ",string count expected;
     .termcolour.red "\tActual:     ",indentedString actual;
@@ -14,6 +15,7 @@ equal:{[expected;actual]
 
 .assert.in:{[member;collection]
     if[member in collection; :1b];
+    .termcolour.red "\tAssertion failed: .assert.in";
     .termcolour.red "\tExpected member: ",.Q.s member;
     .termcolour.red "\tIn collection:   ",(indentedString collection);
     .termcolour.red "\tWith count:      ",string count collection;
