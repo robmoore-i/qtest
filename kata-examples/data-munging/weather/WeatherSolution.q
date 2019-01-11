@@ -1,4 +1,4 @@
-system "cd src"
+system "cd src" // NB. I also need a tool for dynamic library loading.
 \l Weather.q
 system "cd .."
 
