@@ -19,8 +19,10 @@ in this repository.
 
 ## Usage
 
-The examples here can all be found in `examples/MarsRover/RoverTest.q`. This is
-a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover).
+The examples below can all be found in `development-examples/MarsRover/RoverTest.q`.
+This is a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover),
+I was just playing about to explore how I wanted to write my unit tests in Q. The
+meatier examples are in `kata-examples/data-munging`.
 
 ### What to import
 
@@ -161,3 +163,13 @@ Rob:MarsRover romo$ q RoverTest.q
 - Not many types of assertions, but you can add your own fairly easily.
 
 - Assertions are not deeply tested, but you can correct the implementation if it proves inadequate.
+
+### Practice TDD
+
+The Mars Rover kata (https://github.com/priyaaank/MarsRover) is excellent for
+training your software design skills. When I am showing people TDD it is my goto.
+If you're new to TDD I really recommend you have a go at it.
+
+For Q, something more Q-ish will perhaps help more to convince people that TDD's
+applicability is not limited to one language, framework or industry. I have chosen
+the Data Munging kata (http://codekata.com/kata/kata04-data-munging/).
