@@ -1,8 +1,8 @@
-\l ../../../qtest.q
-\l ../../../assertq.q
-\l ../../../termcolour.q
+\l ../../../../qtest.q
+\l ../../../../assertq.q
+\l ../../../../termcolour.q
 
-\l Parser.q
+\l ../src/Parser.q
 
 .qtest.test["Can parse day number of first day";{
     rows:("  Dy MxT   MnT   AvT   HDDay  AvDP 1HrP TPcpn WxType PDir AvSp Dir MxS SkyC MxR MnR AvSLP";

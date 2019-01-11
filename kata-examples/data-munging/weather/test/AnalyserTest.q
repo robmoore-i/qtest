@@ -1,8 +1,8 @@
-\l ../../../qtest.q
-\l ../../../assertq.q
-\l ../../../termcolour.q
+\l ../../../../qtest.q
+\l ../../../../assertq.q
+\l ../../../../termcolour.q
 
-\l Analyser.q
+\l ../src/Analyser.q
 
 .qtest.test["Can get the day with the smallest temperature spread";{
     parsedRows:flip `Dy`MxT`MnT!(1 2 3;10 10 10;20 30 40);

@@ -1,8 +1,8 @@
-\l ../../../qtest.q
-\l ../../../assertq.q
-\l ../../../termcolour.q
+\l ../../../../qtest.q
+\l ../../../../assertq.q
+\l ../../../../termcolour.q
 
-\l Weather.q
+\l ../src/Weather.q
 
 .qtest.test["Can get the day with the smallest temperature spread";{
     rows:("  Dy MxT   MnT   AvT   HDDay  AvDP 1HrP TPcpn WxType PDir AvSp Dir MxS SkyC MxR MnR AvSLP";
