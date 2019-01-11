@@ -8,6 +8,7 @@
 test:{[description;testfunc]
     -1 "- ",description;
     result:testfunc[];
+    if[or[result~();null result];-1 "\n  Warning!\n  This test does not return a boolean value, it should!\n  It has set to fail to warn you.\n  You've probably just got an extra semicolon on the last line.\n"; result:0b];
     $[result;.termcolour.green "\tPass";.termcolour.red "\tFail"];
     $[result;
         passes::passes,enlist description;
