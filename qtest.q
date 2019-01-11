@@ -1,7 +1,5 @@
 \d .qtest
 
-\l ../../termcolour.q
-
 .qtest.failures::()
 .qtest.passes::()
 

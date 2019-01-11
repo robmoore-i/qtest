@@ -1,5 +1,6 @@
 \l ../../qtest.q
 \l ../../assertq.q
+\l ../../termcolour.q
 
 \l FruitTrader.q
 \l Market.q

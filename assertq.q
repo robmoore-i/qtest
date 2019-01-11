@@ -1,7 +1,5 @@
 \d .assert
 
-\l ../../termcolour.q
-
 indentedString:{"\n\t\t\t",ssr[.Q.s x;"\n";"\n\t\t\t"]}
 
 equal:{[expected;actual]
