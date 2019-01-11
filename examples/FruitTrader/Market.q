@@ -2,4 +2,4 @@
 
 new:{[quantities;prices]}
 
-quantity:{[market;item]}
+quantity:{[market;item]0}
