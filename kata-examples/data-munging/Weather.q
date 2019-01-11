@@ -1,3 +1,8 @@
+\l Parser.q
+\l Analyser.q
+
 \d .weather
 
-minTempSpreadDay:{[rows]2}
+minTempSpreadDay:{[rows]
+    parsedRows:.parser.parse rows;
+    .analyser.minTempSpreadDay parsedRows}
