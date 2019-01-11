@@ -7,6 +7,7 @@ new:{[startX;startY;startDirection]`x`y`d!(startX;startY;startDirection)}
 
 move:{[rover]
     rover[`y]+:dy rover`d;
+    rover[`x]+:dx rover`d;
     rover}
 
 pickup:{[rover;itemDescription]
