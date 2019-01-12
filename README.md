@@ -162,14 +162,51 @@ Rob:MarsRover romo$ q RoverTest.q
 
 - Not many types of assertions, but you can add your own fairly easily.
 
-- Assertions are not deeply tested, but you can correct the implementation if it proves inadequate.
+- Assertions are not deeply tested, but you can correct the implementation if
+it proves inadequate.
+
+## TDD
+
+### What is TDD?
+
+TDD is an abbreviation of Test Driven Development. It is a practice wherein you
+write the tests *first*, before you write any production code. It is the
+*first*-ness of writing the tests which is the fundemental step in understanding.
+
+Here are a list of resources on TDD I consider to be excellent:
+
+#### "Uncle" Bob Martin: The 3 Rules of TDD
+
+Link: http://www.butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd
+
+A short article in which Bob Martin introduces the basics of TDD and also
+elaborates brilliantly on the many benefits of TDD, including, but not limited
+to: Going faster, making changes more confidently, having clearer documentation
+and ensuring the code has an inherently testable design.
+
+#### Keith Braithwaite: TDD as if you meant it
+
+Link: https://www.infoq.com/presentations/TDD-as-if-You-Meant-It.
+
+By the 10 minute mark Keith has explained everything you need to know to try TDD
+yourself. Personally, I recommend watching up until 13:40, unless you also plan
+on doing the exercise, in which case watch until the exercise is clear.
+
+#### Steve Freeman and Nat Pryce: Growing Object-Oriented software, guided by tests (aka The GOOS book)
+
+This is a book nominally aimed at OOP, but in fact the techniques and lessons
+from it are applicable in any software domain benefitting from such concepts as
+early feedback, useful abstraction, extensible and maintainable design and
+testability. It is an authoritative work on the subjects of OOP and TDD.
 
 ### Practice TDD
 
 The Mars Rover kata (https://github.com/priyaaank/MarsRover) is excellent for
-training your software design skills. When I am showing people TDD it is my goto.
-If you're new to TDD I really recommend you have a go at it.
+training your software design skills. When I am showing people TDD for the first
+time it is my goto exercise. If you're new to TDD I really recommend you have a
+go at this yourself.
 
 For Q, something more Q-ish will perhaps help more to convince people that TDD's
 applicability is not limited to one language, framework or industry. I have chosen
-the Data Munging kata (http://codekata.com/kata/kata04-data-munging/).
+the Data Munging kata (http://codekata.com/kata/kata04-data-munging/). This is
+in the `kata-examples/data-munging` directory of this repo.
