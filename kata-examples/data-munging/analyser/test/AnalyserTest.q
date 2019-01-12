@@ -14,4 +14,9 @@
 
     .assert.equal[2;.analyser.minTempSpreadDay parsedRows];}]
 
+.qtest.test["Can get the team with the smallest for-against goals spread";{
+    parsedRows:flip `Team`F`A!(`Arsenal`Liverpool`ManU;10 20 1;10 3 4);
+
+    .assert.equal[`Arsenal;.analyser.minForAgainstGoalSpread parsedRows];}]
+
 exit .qtest.report[]
