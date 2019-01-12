@@ -1,5 +1,5 @@
-\l Parser.q
-\l Analyser.q
+\l ../src/Parser.q
+\l ../../analyser/src/Analyser.q
 
 \d .weather
 
