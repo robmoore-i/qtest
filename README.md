@@ -142,7 +142,8 @@ m32/ 12()core 32768MB romo rob.local w.x.y.z NONEXPIRE
 		d| `N
 
 	With count: 3
-	Fail
+
+    Failed with signal: notequal
 
 Failed tests:
 - The Rover can be created from a file
