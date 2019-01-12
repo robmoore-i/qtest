@@ -21,8 +21,8 @@ in this repository.
 
 The examples below can all be found in `development-examples/MarsRover/RoverTest.q`.
 This is a variation on the Mars Rover kata (https://github.com/priyaaank/MarsRover),
-I was just playing about to explore how I wanted to write my unit tests in Q. The
-meatier examples are in `kata-examples/data-munging`.
+I was just playing about to explore how I wanted to write my unit tests in Q. A
+slightly bigger example is in `kata-examples/data-munging`.
 
 ### What to import
 
