@@ -14,8 +14,8 @@ also guilty of this.
 
 I wrote this tool and I will be doing experiments in TDD in Q in times to come.
 
-There is also no assertions library for Q, so that is also going to be included
-in this repository.
+There is also no assertions library for Q, so that is also included in this
+repo.
 
 ## Usage
 
