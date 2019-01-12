@@ -4,7 +4,7 @@
 
 \l ../src/Parser.q
 
-.qtest.test["Can parse first team name";{
+.qtest.test["Can get the team with the smallest for-against goal spread from text rows";{
     rows:("        Team            P     W    L   D    F      A     Pts";
           "     1. Arsenal         38    26   9   3    79  -  36    87 ";
           "     2. Liverpool       38    24   8   6    67  -  30    80 ";
