@@ -6,9 +6,14 @@ I would like to do TDD in Q so that I can go faster and have high quality,
 maintainable Q to show off to employers even though they only care about the
 length of my CV anyway.
 
-But there are no tools available. I looked some up but they are undocumented,
-write-only landfills, like an unfortunate amount of Q code in existance. I am
-also guilty of this.
+But there aren't many tools available. I looked some up but they are mostly
+undocumented, write-only landfills, like an unfortunate amount of Q code in
+existance. I am also guilty of this.
+
+A repository that was brought to my attention was qspec, which has
+documentation! Unfortunately, this documentation struggles to concisely answer
+the first question I want answered: "How do I write a trivial unit test and
+run it?"
 
 ## Solution
 
@@ -29,6 +34,7 @@ slightly bigger example is in `kata-examples/data-munging`.
 ```
 \l ../../qtest.q
 \l ../../assertq.q
+// \l <source file>
 ```
 
 ### Write a very simple test
@@ -84,6 +90,12 @@ slightly bigger example is in `kata-examples/data-munging`.
 
 ```
 exit .qtest.report[]
+```
+
+### Run a test
+
+```
+Rob:MarsRover romo$ q RoverTest.q
 ```
 
 ## Test output
@@ -151,12 +163,6 @@ Failed tests:
 1 tests failed
 4 tests passed
 Rob:MarsRover romo$
-```
-
-### Run a test
-
-```
-Rob:MarsRover romo$ q RoverTest.q
 ```
 
 ## Inadequacies
