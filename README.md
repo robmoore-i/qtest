@@ -98,6 +98,20 @@ exit .qtest.report[]
 Rob:MarsRover romo$ q RoverTest.q
 ```
 
+### "Installation" (Automatically co-locating required q files)
+
+I have only tested this handy script on linux, hopefully it also works for mac. Windows would require copy/paste, soz.
+
+This isn't hosted anywhere, so you need to clone the repo first. I have included a script, `copy-to-folder.sh`, which takes the path to a directory, like `/users/rob/documents/my-project` and puts under it a folder called `qtest` containing the files `assertq.q`, `qtest.q` and `termcolour.q`. From here you can import them and use them as described above.
+
+Example:
+
+```
+$ git clone https://github.com/robmoore-i/qtest.git
+$ cd qtest/
+$ ./copy-to-folder.sh /users/rob/documents/my-project
+```
+
 ## Test output
 
 Green and red coloured output as appropriate.
