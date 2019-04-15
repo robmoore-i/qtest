@@ -34,6 +34,7 @@ slightly bigger example is in `kata-examples/data-munging`.
 ```
 \l ../../qtest.q
 \l ../../assertq.q
+\l ../../termcolour.q
 // \l <source file>
 ```
 
